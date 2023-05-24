@@ -93,17 +93,19 @@ class B2CModeFragment : Fragment() {
      */
     private fun initializeUI() {
 
-        val dataAdapter = ArrayAdapter<String>(
-                context, android.R.layout.simple_spinner_item,
+        val dataAdapter = context?.let {
+            ArrayAdapter<String>(
+                it, android.R.layout.simple_spinner_item,
                 object : ArrayList<String?>() {
                     init {
                         for (policyName in B2CConfiguration.Policies) add(policyName)
                     }
                 }
-        )
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            )
+        }
+        dataAdapter?.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         policy_list.setAdapter(dataAdapter)
-        dataAdapter.notifyDataSetChanged()
+        dataAdapter?.notifyDataSetChanged()
         btn_runUserFlow.setOnClickListener(View.OnClickListener {
             if (b2cApp == null) {
                 return@OnClickListener
@@ -300,17 +302,19 @@ class B2CModeFragment : Fragment() {
             btn_removeAccount!!.isEnabled = false
             btn_acquireTokenSilently!!.isEnabled = false
         }
-        val dataAdapter = ArrayAdapter<String>(
-                context, android.R.layout.simple_spinner_item,
+        val dataAdapter = context?.let {
+            ArrayAdapter<String>(
+                it, android.R.layout.simple_spinner_item,
                 object : ArrayList<String?>() {
                     init {
                         for (user in users) add(user.displayName)
                     }
                 }
-        )
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            )
+        }
+        dataAdapter?.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         user_list!!.adapter = dataAdapter
-        dataAdapter.notifyDataSetChanged()
+        dataAdapter?.notifyDataSetChanged()
     }
 
     companion object {

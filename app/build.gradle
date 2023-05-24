@@ -29,12 +29,11 @@ android {
             keyPassword 'android'
         }
     }
-    compileSdkVersion 28
-    buildToolsVersion "29.0.0"
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.azuresamples.msalandroidkotlinapp"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -56,6 +55,7 @@ android {
 
         external {}
     }
+    namespace 'com.azuresamples.msalandroidkotlinapp'
 }
 
 dependencies {

@@ -21,6 +21,7 @@ import org.json.JSONObject
 import java.util.*
 
 class MultipleAccountModeFragment : Fragment() {
+
     private val TAG = MultipleAccountModeFragment::class.java.simpleName
 
     /* Azure AD v2 Configs */

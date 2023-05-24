@@ -15,10 +15,12 @@ import com.microsoft.identity.client.exception.MsalClientException
 import com.microsoft.identity.client.exception.MsalException
 import com.microsoft.identity.client.exception.MsalServiceException
 import com.microsoft.identity.client.exception.MsalUiRequiredException
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_single_account_mode.*
 import org.json.JSONObject
 
 class SingleAccountModeFragment : Fragment() {
+
     private val TAG = SingleAccountModeFragment::class.java.simpleName
 
     /* Azure AD v2 Configs */
